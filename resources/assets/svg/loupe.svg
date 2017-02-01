@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="40.469" height="47.375" viewBox="0 0 40.469 47.375">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #8698a5;
+        fill-rule: evenodd;
+      }
+    </style>
+  </defs>
+  <path id="Loupe.svg" class="cls-1" d="M603.194,781l-7.015-9.566a20,20,0,1,0-4.116,2.888l7.075,9.648Zm-32.766-15.8A15,15,0,0,1,582.7,741.63a15.174,15.174,0,0,1,2.669.237A14.994,14.994,0,1,1,570.428,765.2Z" transform="translate(-562.719 -736.594)"/>
+</svg>

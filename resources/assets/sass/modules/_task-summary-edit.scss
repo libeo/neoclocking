@@ -1,0 +1,100 @@
+// ----------------------------------------- //
+//             Task summary edit             //
+// ----------------------------------------- //
+
+.task-summary-title {
+    margin-bottom: 18px;
+    padding-bottom: 6px;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: color("white");
+    border-bottom: 1px solid rgba(color("white"), 0.3);
+    @include rem-typo(16px, 20px);
+}
+
+.task-summary-edit {
+    margin-top: 35px;
+    input,
+    select,
+    textarea, a.button{
+        display: block;
+        width: 100%;
+        margin-top: 5px;
+        padding: 8px 10px;
+        border-width: 1px;
+        border-style: solid;
+        border-radius: $border-radius;
+        @include rem-typo(14px, 19px);
+        &.edit-task-input-project {
+            padding-left: 30px;
+        }
+        &[readonly] {
+            opacity: 0.5;
+        }
+    }
+    input.button, a.button{
+        border:none;
+        text-align:center;
+        padding: 12px;
+        font-size: 1rem;
+    }
+    input[type=checkbox]{
+        width: auto;
+        float:left;
+        margin-top: 2px;
+        margin-right: 9px;
+        margin-bottom: 10px;
+    }
+    select {
+        height: 37px;
+    }
+    label {
+        font-weight: 600;
+        text-transform: uppercase;
+        color: color("white");
+        @include rem-typo(12px, 19px);
+    }
+}
+
+.edit-task-input-wrapper {
+    display: inline-block;
+    position: relative;
+    width: 165px;
+    margin-right: 10px;
+    margin-bottom: 18px;
+    vertical-align:bottom;
+    &.is-fullwidth {
+        width: 100%;
+        margin-right: 0;
+    }
+}
+
+.edit-task-search-project-trigger {
+    position: absolute;
+    bottom: 10px;
+    left: 8px;
+}
+
+.edit-task-actions {
+    margin-top: 15px;
+    padding-top: 20px;
+    font-size: 0;
+    border-top: 1px solid rgba(color("white"), 0.2);
+    @include clearfix;
+}
+
+.edit-task-action-left,
+.edit-task-action-right {
+    display: inline-block;
+    vertical-align: middle;
+    width: 40%;
+    float:left;
+}
+
+.edit-task-action-right {
+    text-align: right;
+    float:right;
+}
+.edit-task-action-left{
+    width: 30%;
+}

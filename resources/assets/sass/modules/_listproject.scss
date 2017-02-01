@@ -1,0 +1,69 @@
+// ------------------------------------- //
+//           LISTE DES PROJECT           //
+// ------------------------------------- //
+
+
+.projects .projects-header h1 {
+    display: block;
+    text-align: center;
+    font-size: 25px;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 65px;
+}
+
+.projects .project-list .project-list-item {
+    padding: 20px 0px;
+}
+
+.projects .project-list .project-list-item:not(:first-child) {
+    border-top: 1px solid #8698a5;
+}
+
+.projects .project-list .project-list-item h2 {
+    display: block;
+    text-align: left;
+    font-size: 13px;
+    font-weight: normal;
+    color: #8698a5;
+}
+
+.projects .project-list .project-list-item .client-projects {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    a{
+        font-size: rem(18px);
+        font-weight:bold;
+    }
+}
+
+input[type='search'] {
+    width: 100%;
+    font-size: 1.5em;
+    border-radius: 3px;
+    border: 1px solid #fff;
+    font-weight: lighter;
+    background-color: rgba(0, 0, 0, .2);
+    padding: 5px;
+    color: #fff;
+    transition: all .4s;
+    opacity: .4;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+
+    &.not-empty {
+        opacity: .8;
+    }
+
+    &:focus {
+        opacity: 1;
+        outline-color: #fff;
+    }
+}
+
+p {
+    font-weight: lighter;
+    color: #fff;
+    text-align: center;
+}

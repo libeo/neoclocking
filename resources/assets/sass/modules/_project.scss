@@ -1,0 +1,500 @@
+// ------------------------------------- //
+//                PROJECT                //
+// ------------------------------------- //
+
+body.in-project .l-block-content {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 50px 0px 0px 0px;
+    display: block;
+}
+
+.project-info-wrapper > * {
+    display: block;
+}
+
+.project-info-header > * {
+    display: block;
+}
+
+.project-info-summary {
+    color: #8698a5;
+}
+
+.project-info-summary-client {
+    font-size: 16px;
+}
+
+.project-info-summary-title {
+    color: #fff;
+    margin: 5px 0px;
+    font-size: 25px;
+}
+
+.project-info-summary-details {
+    margin: 15px 0px 0px 0px;
+    width: 100%;
+    padding: 0;
+    list-style-type: none;
+    display: table;
+}
+
+.project-info-summary-details > * {
+    display: table-cell;
+    color: #8698a5;
+    font-size: 13px;
+    padding: 0;
+    margin: 0;
+}
+
+.project-info-summary-details > * span{
+    color: #fff;
+    text-transform: uppercase;
+    margin-left: 8px;
+}
+
+.project-info-actions {
+    border-top: 1px solid rgba(255,255,255,0.2);
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+    margin: 25px 0px;
+    font-size: 12px;
+    font-weight: bold;
+    text-transform: uppercase;
+    position: relative;
+    display: table;
+    width: 100%;
+}
+
+.project-info-actions a {
+    color: #fff;
+    margin: 0px 10px;
+    cursor: pointer;
+}
+
+.project-info-actions > * {
+    display: table-cell;
+    padding: 15px 0px;
+}
+
+.project-info-actions > *:not(:last-child) {
+    border-right: 1px solid rgba(255,255,255,0.2);
+}
+.info-actions-filtres {
+    text-align: left;
+}
+
+.info-actions-filtres > * {
+    display: inline-block;
+    padding: 15px 0px;
+}
+
+.info-actions-filtres span {
+    color: #8698a5;
+    margin-right: 10px;
+}
+
+.info-actions-filtres .active-filters button {
+    background: none;
+    border: none;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 12px;
+    padding: 3px 0px;
+    margin: 0px 6px;
+}
+
+.info-actions-filtres .active-filters button.active {
+    border-bottom: 2px solid #8698a5;
+}
+
+.info-actions-filtres .resource-filter {
+    background: none;
+    border: none;
+    color: #fff;
+    text-transform: uppercase;
+    width: 100px;
+    margin-left: 19px;
+    > *{
+        color: #0c1a46;
+        background:white;
+    }
+}
+
+.info-actions-groupe {
+    text-align: center;
+}
+
+.info-actions-groupe select {
+    background: none;
+    border: none;
+    color: #fff;
+    text-transform: uppercase;
+    width: 142px;
+    margin: 0 14px;
+    padding: 15px 0;
+    option{
+        color: #0c1a46;
+        background:white;
+        &[disabled]{
+            color: #bbb;
+        }
+    }
+}
+
+.info-actions-button {
+    text-align: right;
+}
+
+.info-actions-button button {
+    margin-left: 20px;
+    position: relative;
+}
+
+.info-actions-button button.addtask {
+    padding-left: 50px;
+    margin-right: 20px;
+}
+
+.info-actions-button button.addtask i {
+    width: 23px;
+    height: 23px;
+    background-image: url("../img/add-tache.png");
+    background-repeat: no-repeat;
+    background-position: center left;
+    position: absolute;
+    top: 8px;
+    left: 14px;
+}
+
+.project-info-content > * {
+    width: 100%;
+}
+
+.project-info-filtertask {
+    display: table;
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    white-space: nowrap;
+    border-radius: 5px;
+    background-color: #fff;
+    box-shadow: 0px 3px #000;
+    margin-bottom: 15px;
+    padding: 15px 0px;
+}
+
+.project-info-filtertask > * {
+    display: table-cell;
+    vertical-align: middle;
+    width: 150px;
+    text-align: center;
+}
+
+.check-filtre {
+    width: auto;
+    position: relative;
+    overflow: hidden;
+    font-size: 0;
+    input[type=checkbox] {
+        display: inline-block;
+        vertical-align: middle;
+        opacity: 0;
+        background-color: #fff;
+    }
+    label {
+        display: inline-block;
+        vertical-align: middle;
+        width: auto;
+        margin: 0;
+        @include rem-typo(11px, 11px);
+        .fake-checkbox {
+            width: 13px;
+            height: 13px;
+            border: 1px solid #74247a;
+            border-radius: 3px;
+            background-color: #fff;
+            @include absolute-vertical-center;
+        }
+    }
+    input[type="checkbox"]:checked + .subscribe-mail-label {
+        .fake-checkbox {
+            background: url("../img/project-check.png") #74247a no-repeat center;
+        }
+    }
+}
+
+.numero-filtre {
+    width: 80px;
+}
+
+.tache-filtre {
+    width: 268px;
+}
+
+table thead th{
+    font-size: 12px;
+    font-weight: bold;
+    color: #102a3e;
+    text-transform: uppercase;
+    text-align: left;
+    white-space: nowrap;
+    &.sorting, &.sorting_asc, &.sorting_desc{
+        &:hover, &:focus{
+            text-decoration:underline;
+            cursor:pointer;
+        }
+    }
+
+    &.sorting_asc:after{
+        content:" ▲";
+    }
+    &.sorting_desc:after{
+        content:" ▼";
+    }
+}
+
+
+.project-info-entertask {
+    display: table;
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    white-space: nowrap;
+    border-radius: 5px;
+    background-color: rgba(255,255,255,0.9);
+    margin-bottom: 15px;
+    font-size: 15px;
+    color: #102a3e;
+    padding: 10px 0px;
+}
+
+.project-info-entertask > * {
+    display: table-cell;
+    vertical-align: middle;
+    width: 150px;
+    text-align: center;
+}
+
+.project-info-entertask .numero-content {
+    color: #102a3e;
+}
+
+.project-info-task {
+    display: table;
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    white-space: nowrap;
+    border-radius: 5px;
+    background-color: #fff;
+    margin-bottom: 5px;
+    padding: 10px 0px;
+    font-size: 15px;
+    color: #102a3e;
+}
+
+.project-info-task > * {
+    display: table-cell;
+    vertical-align: middle;
+    width: 150px;
+    text-align: center;
+}
+
+.check-content {
+    width: auto;
+    position: relative;
+    overflow: hidden;
+    font-size: 0;
+    input[type=checkbox] {
+        display: inline-block;
+        vertical-align: middle;
+        opacity: 0;
+        background-color: #fff;
+    }
+    label {
+        display: inline-block;
+        vertical-align: middle;
+        width: auto;
+        margin: 0;
+        @include rem-typo(11px, 11px);
+        .fake-checkbox {
+            width: 13px;
+            height: 13px;
+            border: 1px solid #74247a;
+            border-radius: 3px;
+            background-color: #fff;
+            @include absolute-vertical-center;
+        }
+    }
+    input[type="checkbox"]:checked + .subscribe-mail-label {
+        .fake-checkbox {
+            background: url("../img/check.png") #74247a no-repeat center;
+        }
+    }
+}
+
+.numero-content{
+    width: 80px;
+    color: #8b2c74;
+}
+
+.task-content {
+    min-width: 268px;
+}
+
+.task-content textarea {
+    vertical-align: top;
+    width: calc(100% - 25px);
+    padding: 10px;
+    font-family: "Roboto","Arial",sans-serif;
+    font-size: 13px;
+    line-height: 15px;
+    color: #919298;
+    border: 1px solid #a3a1a8;
+    border-radius: 3px;
+}
+
+.estimation-content input {
+    max-width: 60px;
+    min-width: 50px;
+    padding: 5px;
+    font-family: "Roboto","Arial",sans-serif;
+    font-size: 15px;
+    line-height: 15px;
+    color: #000;
+    border: 1px solid #a3a1a8;
+    border-radius: 3px;
+}
+
+.project-tasks-editable_wrapper{
+
+}
+table#project-tasks, table#project-tasks-editable {
+    line-height: 18px;
+    .estimation .exceeded {
+        color: red;
+    }
+    input[type="text"], select, textarea {
+        //-webkit-appearance: none;
+        border-radius: $border-radius;
+        padding: 5px;
+        border: 1px solid rgba(128, 128, 128, 0.54);
+        background: none;
+    }
+    select{
+        max-width: 10em;
+    }
+
+    textarea {
+        resize: none;
+        width: 100%;
+        font-size: 13px;
+        color: #919298;
+    }
+
+    .estimation {
+        white-space: nowrap;
+        input {
+            width: 66px;
+        }
+    }
+
+    td.milestone{
+        position:relative;
+    }
+
+    border-collapse: separate;
+    border-spacing: 0 4px;
+    width: 100% !important;
+    margin-bottom:20px;
+    tr {
+        background: white;
+        font-size: 15px;
+        text-align: left;
+        .name {
+            min-width: 270px;
+        }
+        th, td {
+            padding: 10px;
+
+            &:first-child {
+                border-top-left-radius: $border-radius;
+                border-bottom-left-radius: $border-radius;
+            }
+
+            &:last-child {
+                border-top-right-radius: $border-radius;
+                border-bottom-right-radius: $border-radius;
+            }
+
+            .error {
+                color: red;
+                text-transform: none;
+            }
+        }
+
+        th {
+            text-transform: uppercase;
+            color: #0c1a46;
+            border-bottom: solid #161616 3px;
+        }
+
+        &.closed td {
+            background: #c8c8c8;
+        }
+
+        &.dirty td {
+            background: #FFDCDF;
+        }
+    }
+    .btn_delete_task{
+        position:absolute;
+        right: -50px;
+        width: 55px;
+        padding: 0 0 0 5px;
+        top:0;
+        bottom:0;
+        border-top-right-radius: 5px;
+        border-bottom-right-radius: 5px;
+        i{
+            font-size: 25px;
+            color: white;
+        }
+        &:before{
+            content: '';
+            position:absolute;
+            top:0;
+            bottom:0;
+            left:0;
+            width: 5px;
+            background:#f2f3f5;
+            border-top-right-radius: 5px;
+            border-bottom-right-radius: 5px;
+        }
+    }
+}
+
+table#project-tasks-editable tr.is-new {
+    font-size: 15px;
+    background: #f2f3f5;
+}
+
+table tbody tr .number {
+    color: #8b2c74;
+    font-weight: bold;
+}
+table tbody tr .number a {
+    color: #8b2c74;
+}
+
+.dataTables_wrapper{
+    margin-bottom: 35px;
+}
+table#project-tasks tbody tr .name{
+    text-align:left;
+}
+table#project-tasks tbody tr td, table#project-tasks-editable tbody tr td{
+    height: 55px;
+    color: #919298;
+}

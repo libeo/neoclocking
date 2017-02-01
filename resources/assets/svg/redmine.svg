@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="15.906" height="16" viewBox="0 0 15.906 16">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #8c2c74;
+        fill-rule: evenodd;
+      }
+    </style>
+  </defs>
+  <path id="Redmine.svg" class="cls-1" d="M299.806,873.139a1.021,1.021,0,0,1-.258.97l-2.939,2.939a1.039,1.039,0,0,1-1.469-1.47L296.718,874H289v-2h7.711l-1.364-1.363a1,1,0,1,1,1.415-1.415l2.828,2.829A1,1,0,0,1,299.806,873.139ZM286,879h11v2H284V865h13v2H286v12Z" transform="translate(-284 -865)"/>
+</svg>

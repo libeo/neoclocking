@@ -1,0 +1,8 @@
+img, svg {
+    &.disabled {
+        fill: #999 !important;
+        &:hover {
+            fill: #999 !important;
+        }
+    }
+}

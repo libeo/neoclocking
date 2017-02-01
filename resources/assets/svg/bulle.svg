@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="19" height="18" viewBox="0 0 19 18">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #8c2c74;
+        fill-rule: evenodd;
+      }
+    </style>
+  </defs>
+  <path id="Bulle.svg" class="cls-1" d="M391,876h9l2,3,1-3h3v-9H391v9Zm11,7-2.4-4.88L389,878v-13h19v13l-4.012.12Z" transform="translate(-389 -865)"/>
+</svg>

@@ -1,0 +1,159 @@
+// ---------------------------- //
+//             Base             //
+// ---------------------------- //
+
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+body {
+    line-height: 1;
+}
+ol, ul {
+    list-style: none;
+}
+blockquote, q {
+    quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+// Reset box-sizing to border-box
+html {
+    box-sizing: border-box;
+}
+
+// Keep box-sizing inheritance
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+// Keep content-box for images to prevent image resizing
+img {
+    box-sizing: content-box;
+}
+
+// Body styles
+body {
+    overflow-x: hidden;
+    min-width: $document-width;
+    font-family: $ff-default;
+    color: $c-txt-default;
+    background-color: $c-bg-document;
+    @include respond-to(document-width) {
+        min-width: 0;
+    }
+}
+
+// Responsive images, svg and iframes
+img,
+svg,
+iframe {
+    max-width: 100%;
+    html:not(.ie) & {
+        height: auto;
+    }
+}
+
+// Remove the gap between elements and the bottom of their containers
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+    vertical-align: middle;
+}
+
+// Remove default fieldset styles
+fieldset {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+// Allow only vertical resizing of textareas
+textarea {
+    resize: vertical;
+}
+
+// Change blockquote margin for padding
+blockquote {
+    margin-left: 0;
+    padding-left: 40px;
+}
+
+// Default horizontal rule
+hr {
+    margin: 2em 0;
+    border-top: 0;
+    border-bottom: 1px solid $c-border-default;
+    &.is-hidden {
+        display: block;
+        border-bottom-color: transparent;
+    }
+}
+
+// Default list style
+ul,
+ol {
+    @include clearfix;
+    li,
+    li:first-child {
+        margin-top: 0.25em;
+    }
+}
+
+// Disable default list style inside navigation
+nav ul {
+    @include reset-list-style;
+}
+
+// Text selection
+::selection,
+::-moz-selection {
+    color: #fff;
+    background: #000;
+    text-shadow: none;
+}
+
+// Fix default placeholder line-height in Chrome
+// ::-webkit-input-placeholder {
+//     line-height: normal;
+//     color: red;
+// }

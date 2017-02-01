@@ -1,0 +1,12 @@
+// ---------------------------- //
+//             Grid             //
+// ---------------------------- //
+
+.grid {
+    $horizontal-gutter: 25px;
+    $vertical-gutter: 25px;
+    $margin: 30px 0;
+    $max-columns: 5;
+    $vertical-align: top;
+    @include grid($horizontal-gutter, $vertical-gutter, $margin, $max-columns, $vertical-align);
+}

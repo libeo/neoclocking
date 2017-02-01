@@ -1,0 +1,117 @@
+// --------------------------------- //
+//             Edit time             //
+// --------------------------------- //
+
+.edit-time-wrapper, .ask-access-wrapper {
+    padding: 20px 20px 18px;
+}
+
+.edit-time-top, .ask-access-top {
+    font-size: 0;
+    text-align: left;
+}
+
+.edit-time-bottom, .ask-access-bottom {
+    @include clearfix;
+    height: 0;
+    padding: 20px 0;
+    overflow:hidden;
+}
+
+.edit-time-line{
+    display:flex;
+    justify-content: space-between;
+}
+
+.edit-time-input-wrapper, .ask-access-input-wrapper {
+    display: inline-block;
+    vertical-align: middle;
+    &.is-fullwidth {
+        display: block;
+        margin-top: 18px;
+        margin-left: 0;
+        label {
+            padding: 0 6px 0 0;
+        }
+    }
+}
+
+.edit-time-wrapper,
+.ask-access-wrapper {
+    input, textarea {
+        display: inline-block;
+        vertical-align: middle;
+        padding: 2px 4px 1px;
+        font-family: $ff-roboto-condensed;
+        color: #919298;
+        border: 1px solid #a3a1a8;
+        border-radius: 3px;
+        @include rem-typo(16px, 18px);
+    }
+}
+
+.edit-time-wrapper, .ask-access-wrapper {
+    input {
+        text-align: center;
+    }
+}
+
+.edit-time-wrapper, .ask-access-wrapper {
+    textarea {
+        vertical-align: top;
+        width: calc(100% - 25px);
+        padding: 10px;
+        font-family: $ff-roboto;
+        font-style: italic;
+        @include rem-typo(13px, 15px);
+    }
+}
+
+.edit-time-wrapper, .ask-access-wrapper {
+    label {
+        display: inline-block;
+        vertical-align: middle;
+        padding: 0 9px 0 0;
+        font-weight: 600;
+        text-transform: uppercase;
+        color: color("blue", "dark");
+        fill: color("blue", "dark");
+        @include rem-typo(13px, 23px);
+    }
+}
+
+.edit-time-input-hour-start,
+.edit-time-input-hour-end,
+.edit-time-input-hour-total {
+    width: 46px;
+}
+
+.edit-time-input-date {
+    width: 85px;
+}
+
+.edit-time-bottom,
+.ask-access-bottom {
+    margin-top: 10px;
+    font-size: 0;
+}
+
+.edit-time-bottom-left,
+.edit-time-bottom-right,
+.ask-access-bottom-left,
+.ask-access-bottom-right {
+    transform: translateY(-50%);
+}
+
+.edit-time-bottom-left,
+.ask-access-bottom-left {
+    padding-left: 29px;
+    text-align: left;
+    float:left;
+}
+
+.edit-time-bottom-right,
+.ask-access-bottom-right {
+    text-align: right;
+    float:right;
+}

@@ -1,0 +1,400 @@
+// ----------------------------------- //
+//             Clock entry             //
+// ----------------------------------- //
+
+.clock-wrapper {
+    display: table;
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    font-size: 0;
+    white-space: nowrap;
+    border-left: 6px solid color("blue", "light");
+    border-radius: $border-radius;
+    & + & {
+        margin-top: 4px;
+        &.is-gapping{
+            margin-top:24px;
+        }
+    }
+    &.is-clock-history {
+        border-left-color: white;
+    }
+}
+
+
+.clock-left,
+.clock-middle,
+.clock-right,
+.clock-actions {
+    display: table-cell;
+    vertical-align: middle;
+    font-size: 1rem;
+    white-space: normal;
+}
+
+.clock-left {
+    width: 65px;
+    text-align: center;
+    &:before {
+        width: 65px;
+    }
+    background-color: color("white");
+}
+
+.clock-middle {
+    width: auto;
+    padding: 14px 20px 12px 10px;
+    background-color: color("white");
+}
+
+.clock-right {
+    overflow: hidden;
+    width: 34%;
+    padding: 0;
+    font-size: 0;
+    text-align: right;
+    background-color: #f2f3f5;
+
+    border-top-right-radius: $border-radius;
+    border-bottom-right-radius: $border-radius;
+    .is-editing &,
+    .is-clock-history & {
+        width: 58%;
+    }
+    .is-clock-history & {
+        padding: 20px 22px;
+        text-align: left;
+    }
+    .is-clock-history.is-editing & {
+        padding: 20px;
+        text-align: left;
+    }
+}
+
+.clock-right-rad{
+    border-top-right-radius: $border-radius;
+    border-bottom-right-radius: $border-radius;
+}
+
+.clock-actions {
+    width: 1px;
+    padding: 0 10px;
+    white-space: nowrap;
+    background-color: #f2f3f5;
+    border-top-right-radius: $border-radius;
+    border-bottom-right-radius: $border-radius;
+}
+
+.task-summary .clock-actions {
+    padding: 20px;
+    white-space: nowrap;
+    background-color: #f2f3f5;
+}
+
+.clock,
+.clock-add-time-trigger,
+.clock-edit-trigger,
+.clock-edit {
+    z-index: 2;
+    position: relative;
+}
+
+.clock-add-time-trigger {
+    width: 40px;
+    height: 40px;
+    margin: 0;
+    padding: 0;
+    font-weight: 600;
+    text-transform: uppercase;;
+    border: 0;
+    background: transparent;
+    svg{
+        margin-bottom:-3px;
+    }
+}
+
+.clock-title-wrapper {
+    position: relative;
+    margin: 0;
+    margin-bottom: 5px;
+    font-size: 0;
+}
+
+.clock-title-link {
+    position: relative;
+    &:hover {
+        text-decoration: none;
+        .clock-title {
+            text-decoration: underline;
+        }
+    }
+}
+
+.clock-title-task-number {
+    font-family: $ff-roboto-condensed;
+    font-weight: 400;
+    color: #919298;
+    @include rem-typo(15px, 19px);
+}
+
+.clock-title {
+    padding-left: 10px;
+    font-family: $ff-roboto-condensed;
+    font-weight: 400;
+    color: color("blue", "dark");
+    @include rem-typo(16px, 19px);
+
+}
+
+.clock-informations {
+    line-height: 0;
+}
+
+.clock-client {
+    margin-right: 10px;
+    font-family: $ff-roboto-condensed;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: #919298;
+    @include rem-typo(12px, 17px);
+}
+
+.clock-project {
+    margin-right: 10px;
+    font-family: $ff-roboto-condensed;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: #919298;
+    @include rem-typo(12px, 17px);
+}
+
+.clock-time {
+    font-family: $ff-roboto-condensed;
+    font-weight: 400;
+    white-space: nowrap;
+    text-transform: uppercase;
+    color: #919298;
+    @include rem-typo(12px, 17px);
+    &.is-over {
+        font-weight: 600;
+        color: color("red");
+    }
+}
+
+.clock-time-total:before {
+    content: "/ ";
+}
+
+.clock-edit-trigger.is-overlaping {
+    .clock-hour-wrapper{
+        @include gradient-red;
+        color: white;
+        padding: 1px 5px;
+        margin: -1px -5px;
+        border-radius: 3px;
+    }
+    &[role=button]:hover{
+        @include gradient-red;
+        .clock-hour-wrapper{
+            background:none;
+        }
+    }
+}
+
+.clock-hour,
+.clock-hour-total,
+.clock-date {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.clock-hour {
+    width: 50%;
+    font-family: $ff-roboto-condensed;
+    color: color("blue", "dark");
+    @include rem-typo(18px, 18px);
+    .is-clock-history & {
+        width: auto;
+        margin-right: 40px;
+    }
+}
+
+.clock-hour-end:before {
+    content: "- ";
+}
+
+.clock-hour-total {
+    width: 50%;
+    font-family: $ff-roboto-condensed;
+    @include rem-typo(18px, 18px);
+    .is-clock-history & {
+        width: auto;
+    }
+}
+
+.clock-description {
+    margin-top: 8px;
+    font-family: $ff-roboto-condensed;
+    color: #919298;
+    @include rem-typo(14px, 16px);
+}
+
+.clock-profile-picture {
+    overflow: hidden;
+    border: 1px solid #4c788b;
+    border-radius: 50%;
+    width: 44px;
+    height: 44px;
+}
+
+.clock-author {
+    line-height: 0;
+}
+
+.clock-author-label {
+    display: block;
+    font-family: $ff-roboto-condensed;
+    text-transform: uppercase;
+    color: #919298;
+    @include rem-typo(12px, 17px);
+}
+
+.clock-author-name {
+    font-family: $ff-roboto-condensed;
+    font-weight: 400;
+    color: color("blue", "dark");
+    @include rem-typo(16px, 16px);
+}
+
+.clock-date {
+    margin-right: 20px;
+    padding: 2px 5px 0;
+    font-family: $ff-roboto-condensed;
+    font-weight: 600;
+    color: #919298;
+    border: 1px solid #b8b9bd;
+    background-color: color("white");
+    @include rem-typo(12px, 17px);
+    .is-update & {
+        color: color("white");
+        border-color: transparent;
+        background-color: rgba(color("white"), 0.2);
+    }
+}
+
+.clock-hour-label {
+    margin: 0 5px 0 60px;
+    font-family: $ff-roboto-condensed;
+    text-transform: uppercase;
+    @include rem-typo(12px, 12px);
+}
+
+.clock-delete-trigger {
+    display: none;
+}
+
+.clock-edit-trigger {
+    padding: 20px;
+    text-align: left;
+    &[role=button]{
+        cursor: pointer;
+    }
+    .is-clock-history & {
+        padding: 20px 22px;
+    }
+}
+
+.clock-edit-trigger,
+.clock-edit {
+    height: 100%;
+}
+
+.clock-links {
+    margin-top: 10px;
+    margin-bottom: -7px;
+}
+
+.clock-replace-trigger,
+.clock-redmine-trigger {
+    padding: 0;
+    font-weight: 600;
+    margin-bottom: 7px;
+    text-transform: uppercase;
+    color: #8c2c74;
+    background-color: transparent;
+    padding-left: 20px;
+    display:inline-block;
+    border-bottom:0;
+    &:hover {
+        text-decoration: none;
+        border-bottom:0;
+        span{
+            border-bottom: 1px solid #8c2c74;
+        }
+    }
+    .icon{
+        float:left;
+        fill: #8c2c74;
+        margin-left: -20px;
+    }
+}
+
+
+.clock-wrapper.live-clock {
+    margin-bottom: 35px;
+    border-left-color: white;
+    .edit-time-wrapper{
+        width: 58%;
+    }
+    .clock-middle{
+        padding:25px 23px 25px 17px;
+        vertical-align:top;
+    }
+    .clock-right{
+        vertical-align:top;
+        text-align:left;
+    }
+    .clock-hour{
+        width: auto;
+        text-align:left;
+        label{
+            font-family: "Roboto", "Arial", sans-serif !important;
+        }
+    }
+    .clock-hour-total{
+        margin-left: 25px;
+        width: auto;
+        color:#8b2c74;
+        text-align:right;
+    }
+}
+.edit-time-comment-infos{
+    margin-left: 25px;
+}
+.edit-time-comment-required{
+    color: #919298;
+    font-size: 12px;
+    line-height: 12px;
+    margin: 7px 0 0;
+    display:inline-block;
+}
+.edit-time-comment-saved{
+    color: #919298;
+    font-size: 12px;
+    line-height: 12px;
+    display:inline-block;
+    margin: 7px 0 0;
+    .icon{
+        margin-top: -7px;
+        margin-bottom: -5px;
+    }
+    svg{
+        fill: #919298;
+    }
+    .edit-time-comment-required + &{
+        margin-left: 9px;
+        padding-left: 7px;
+        border-left:1px solid #919298;
+    }
+ }

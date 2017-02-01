@@ -1,0 +1,104 @@
+// ------------------------------ //
+//             Search             //
+// ------------------------------ //
+
+// Blur effect on content
+body.is-search-open .l-content {
+    -webkit-filter: blur(5px);
+    -moz-filter: blur(5px);
+    -o-filter: blur(5px);
+    -ms-filter: blur(5px);
+    filter: blur(5px);
+}
+
+// Prevent body scroll when search is open
+body.is-search-open {
+    overflow: hidden;
+}
+
+.l-header-search {
+    min-width: 100vw;
+    background-color: color("white");
+    @include relative-horizontal-center;
+}
+.search-wrapper{
+    max-width: $document-width;
+    margin:0 auto;
+    position:relative;
+}
+
+.search-input {
+    background: url("../img/loupe.png") no-repeat center left;
+    padding-left: 50px !important;
+    width: calc(100% - 50px);
+    height: $search-top-height;
+    margin: 0;
+    padding: 0;
+    font-weight: 300;
+    color: #8698a5;
+    border: none;
+    @include rem-typo(36px, 36px);
+    @include relative-horizontal-center;
+    &::-webkit-input-placeholder {
+        line-height: normal;
+        color: #d9dee2;
+    }
+    &:focus{
+        outline:none;
+    }
+}
+
+.search-results-wrapper {
+    position:relative;
+    z-index: 100;
+    top: 100%;
+    width: 100vw;
+    height: calc(100vh - #{$header-top-height} - #{$search-top-height});
+    padding: 1px 0 0;
+    @include absolute-horizontal-center;
+    &:before {
+        content: "";
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(#061728, 0.9);
+        @include absolute-horizontal-center;
+        z-index:-1;
+    }
+    .loading {
+        margin-top: ($header-top-height + $search-top-height) * -1;
+        @include absolute-center;
+    }
+}
+
+.search-results {
+    overflow-y: auto;
+    max-width: 1080px;
+    height: 100%;
+    margin: 0 auto;
+    padding: 40px;
+    list-style-type: none;
+}
+
+.search-result:first-child {
+    margin-top: 0;
+}
+.close-search-results{
+    position:absolute;
+    top:0;
+    right:0;
+    border:none;
+    background:transparent;
+    font-size: 80px;
+    font-weight: 300;
+    line-height: 88px;
+    padding:0 0 40px;
+    font-family: Roboto, Arial, sans-serif;
+    color: #a3a4ab;
+    cursor: pointer;
+    overflow:hidden;
+    transition: all ease 0.2s;
+    &:hover{
+        color: #882a74
+    }
+}

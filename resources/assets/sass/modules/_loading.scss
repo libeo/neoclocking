@@ -1,0 +1,32 @@
+// ------------------------------- //
+//             Loading             //
+// ------------------------------- //
+
+.loading {
+    display: block;
+    z-index: 1;
+    position: relative;
+    width: image-width("../img/loading.png");
+    height: image-height("../img/loading.png");
+    margin: 0 auto;
+    opacity: 0;
+    background-image: url("../img/loading.png");
+    transition: opacity 500ms;
+    animation-name: rotation;
+    animation-duration: 1.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    &.is-loading {
+        opacity: 1;
+    }
+}
+
+@keyframes rotation {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}

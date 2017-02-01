@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="4" height="21" viewBox="0 0 4 21">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #7f7f7f;
+        fill-rule: evenodd;
+      }
+    </style>
+  </defs>
+  <path id="Handle_bar.svg" data-name="Handle bar.svg" class="cls-1" d="M506,869a2,2,0,1,1-2,2A2,2,0,0,1,506,869Zm0,8a2,2,0,1,1-2,2A2,2,0,0,1,506,877Zm0,9a2,2,0,1,1-2,2A2,2,0,0,1,506,886Z" transform="translate(-504 -869)"/>
+</svg>

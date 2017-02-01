@@ -1,0 +1,13 @@
+before_script:
+    - cp .env.example .env
+    - composer install
+    - php artisan key:generate
+
+jobCS:
+  script: './tools/code_sniffing/code_sniffing.sh'
+  tags:
+    - php-5.5
+jobPHPUnit:
+  script: 'vendor/bin/phpunit'
+  tags:
+    - php-5.5

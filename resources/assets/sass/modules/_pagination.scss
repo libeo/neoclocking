@@ -1,0 +1,79 @@
+// ---------------------------------- //
+//             Pagination             //
+// ---------------------------------- //
+
+.pagination {
+    .pagination-element {
+        display: inline-block;
+        vertical-align: middle;
+        margin: 0;
+        + .pagination-element {
+            margin-left: 10px;
+        }
+    }
+    a {
+        display: inline-block;
+        vertical-align: middle;
+    }
+}
+
+.pagination-wrapper {
+    text-align: center;
+    -webkit-user-select: none;
+    -webkit-touch-callout: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+
+    .dataTables_paginate {
+        padding: 0;
+        display: inline-block;
+        border: 1px solid $colourTranslucentWhite;
+        border-radius: $border-radius;
+
+        > span {
+            margin: 0;
+            padding: 0;
+            display: inline-block;
+        }
+        span.ellipsis{
+            color: rgba(white,0.5);
+            display: inline-block;
+            padding: 10px;
+            background: transparent;
+            border-right: 1px solid $colourTranslucentWhite;
+        }
+        a.paginate_button {
+            cursor: pointer;
+            color: white;
+            display: inline-block;
+            padding: 10px;
+            background: transparent;
+            border-right: 1px solid $colourTranslucentWhite;
+            transition: background .3s ease-in-out, color .3s ease-in-out;
+            min-width: 40px;
+
+            &:hover {
+                background: rgba(255, 255, 255, .3);
+                text-decoration: none;
+            }
+
+            &.disabled {
+                cursor: default;
+                &:hover {
+                    background: transparent;
+                }
+            }
+
+            &.current {
+                @include gradient-purple;
+                cursor: default;
+            }
+
+            &.paginate_button.next {
+                border-right: none;
+            }
+        }
+    }
+}

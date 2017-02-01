@@ -1,0 +1,136 @@
+// --------------------------------- //
+//             Variables             //
+// --------------------------------- //
+
+$document-width: 1315px;
+$header-top-height: 65px;
+$search-top-height: 100px;
+$block-content-width: 845px;
+$block-sidebar-width: 470px;
+$border-radius: 5px;
+
+// ------------------------------------- //
+//             Media queries             //
+// ------------------------------------- //
+
+// Media queries
+$mq-breakpoints: (
+    "mobile": (
+        min: false,
+        max: 767px,
+        grid: true,
+        export: true
+    ),
+    "tablet": (
+        min: 768px,
+        max: 1024px,
+        grid: true,
+        export: true
+    ),
+    "desktop": (
+        min: 1025px,
+        max: false,
+        grid: true,
+        export: true
+    ),
+    "mobile-tablet": (
+        min: false,
+        max: 1024px,
+        grid: false,
+        export: false
+    ),
+    "document-width": (
+        min: false,
+        max: $document-width,
+        grid: false,
+        export: false
+    )
+);
+
+// ------------------------------ //
+//             Colors             //
+// ------------------------------ //
+
+$colors: (
+    "black": (
+        "base": #000,
+        "light": #555
+    ),
+    "white": (
+        "base": #fff,
+        "dark": darken(#fff, 10%)
+    ),
+    "grey": (
+        "base": #d5d5d5,
+        "light": #e8e7e9,
+        "dark": #1a1a1a
+    ),
+    "blue": (
+        "dark": #102a3e,
+        "light": #8698a5
+    ),
+    "purple": (
+        "light": #3c0844,
+        "base": #8b2c74,
+        "dark": #300636
+    ),
+    "red": (
+        "base": #e60c0c
+    )
+);
+
+@function color($color, $tone: "base") {
+    @if map-has-key($colors, $color) {
+        @return map-get(map-get($colors, $color), $tone);
+    } @else {
+        @warn "Unfortunately, no value could be retrieved from `#{$color}`. Please make sure it is defined in `$colors` map.";
+        @return null;
+    }
+}
+
+// ------------------------------ //
+
+$c-bg-document: color("grey", "dark");
+$c-border-default: color("grey");
+$c-border-transparent: rgba(255,255,255,0.3);
+$c-txt-default: color("black");
+$c-txt-headers: color("black", "light");
+$c-txt-intro: color("black", "light");
+$c-txt-links: color("black", "light");
+$c-alert: color("red");
+
+// ----------------------------- //
+//             Fonts             //
+// ----------------------------- //
+
+$ff-roboto: "Roboto", "Arial", sans-serif;
+$ff-roboto-condensed: "Roboto Condensed", "Arial", sans-serif;
+
+// ------------------------------ //
+
+$ff-default: $ff-roboto;
+$ff-headers: $ff-roboto;
+
+// --------------------------------- //
+//             Gradients             //
+// --------------------------------- //
+
+@mixin gradient-purple {
+    background: rgb(179,56,116);
+    background: -moz-linear-gradient(45deg, rgba(179, 56, 116, 1) 0%, rgba(170, 53, 116, 1) 9%, rgba(140, 44, 116, 1) 49%, rgba(112, 34, 123, 1) 100%);
+    background: -webkit-gradient(linear, left bottom, right top, color-stop(0%, rgba(179, 56, 116, 1)), color-stop(9%, rgba(170, 53, 116, 1)), color-stop(49%, rgba(140, 44, 116, 1)), color-stop(100%, rgba(112, 34, 123, 1)));
+    background: -webkit-linear-gradient(45deg, rgba(179, 56, 116, 1) 0%, rgba(170, 53, 116, 1) 9%, rgba(140, 44, 116, 1) 49%, rgba(112, 34, 123, 1) 100%);
+    background: -o-linear-gradient(45deg, rgba(179, 56, 116, 1) 0%, rgba(170, 53, 116, 1) 9%, rgba(140, 44, 116, 1) 49%, rgba(112, 34, 123, 1) 100%);
+    background: -ms-linear-gradient(45deg, rgba(179, 56, 116, 1) 0%, rgba(170, 53, 116, 1) 9%, rgba(140, 44, 116, 1) 49%, rgba(112, 34, 123, 1) 100%);
+    background: linear-gradient(45deg, rgba(179, 56, 116, 1) 0%, rgba(170, 53, 116, 1) 9%, rgba(140, 44, 116, 1) 49%, rgba(112, 34, 123, 1) 100%);
+}
+
+@mixin gradient-red {
+    background: rgb(179,56,116);
+    background: -moz-linear-gradient(45deg, rgba(249, 5, 48, 1) 0%, rgba(208, 23, 79, 1) 100%);
+    background: -webkit-gradient(linear, left bottom, right top, color-stop(0%, rgba(249, 5, 48, 1)), color-stop(100%, rgba(208, 23, 79, 1)));
+    background: -webkit-linear-gradient(45deg, rgba(249, 5, 48, 1) 0%, rgba(208, 23, 79, 1) 100%);
+    background: -o-linear-gradient(45deg, rgba(249, 5, 48, 1) 0%, rgba(208, 23, 79, 1) 100%);
+    background: -ms-linear-gradient(45deg, rgba(249, 5, 48, 1) 0%, rgba(208, 23, 79, 1) 100%);
+    background: linear-gradient(45deg, rgba(249, 5, 48, 1) 0%, rgba(208, 23, 79, 1) 100%);
+}

@@ -1,0 +1,36 @@
+// ---------------------------------- //
+//             Time total             //
+// ---------------------------------- //
+
+.time-total-wrapper{
+    padding-top: 2px;
+}
+.time-total-label,
+.time-total {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.time-total-label {
+    color: color("blue", "light");
+    fill: color("blue", "light");
+    @include rem-typo(13px, 14px);
+    > span {
+        display: inline-block;
+        vertical-align: middle;
+        text-align:right;
+    }
+    .icon-wrapper {
+        margin-left: 5px;
+    }
+}
+
+.time-total {
+    margin-left: 10px;
+    color: color("white");
+    @include rem-typo(24px, 18px);
+}
+
+.time-total-wrapper.l-header-top-right-element .time-total {
+    cursor: pointer;
+}

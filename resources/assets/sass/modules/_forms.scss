@@ -1,0 +1,20 @@
+// ----------------------------------- //
+//             Formulaires             //
+// ----------------------------------- //
+
+.ui-autocomplete{
+	background:white;
+	color: #8698a5;
+	.ui-menu-item{
+		padding:0;
+		a{
+			padding: 5px;
+			display:block;
+		}
+	}
+	.ui-state-focus{
+		background: #8698a5;
+		color: white;
+		margin:0;
+	}
+}

@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 15 15">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #0d2537;
+        fill-rule: evenodd;
+      }
+    </style>
+  </defs>
+  <path id="Calendrier.svg" class="cls-1" d="M154,761H143V751h2v3h2v-3h3v3h2v-3h2v10Zm2-12h-4v-1h-2v1h-3v-1h-2v1h-4v14h15V749Z" transform="translate(-141 -748)"/>
+</svg>

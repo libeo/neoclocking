@@ -1,0 +1,54 @@
+// -------------------------------- //
+//             Add time             //
+// -------------------------------- //
+.icon-add_clock{
+    fill: #8d2a76;
+    button:hover &, button:focus &{
+        fill: #b33874;
+    }
+}
+.add-time-wrapper {
+    display: table;
+    position: relative;
+    margin-bottom: 35px;
+    font-size: 0;
+    border-left: 6px solid color("white");
+    border-radius: $border-radius;
+    width: 100%;
+}
+
+.add-time-left,
+.add-time-right,
+.ask-access-left,
+.ask-access-right {
+    display: table-cell;
+    vertical-align: top;
+    font-size: 1rem;
+}
+
+.add-time-left,
+.ask-access-left {
+    width: 42%;
+    padding: 25px 23px 25px 17px;
+    background-color: color("white");
+}
+
+.add-time-right,
+.ask-access-right {
+    width: 58%;
+    background-color: #f2f3f5;
+    border-top-right-radius:$border-radius;
+    border-bottom-right-radius:$border-radius;
+
+}
+
+.add-time-title,
+.ask-access-title {
+    margin-bottom: 10px;
+    padding-bottom: 8px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: color("blue", "dark");
+    border-bottom: 1px solid #a3a1a8;
+    @include rem-typo(18px, 20px);
+}

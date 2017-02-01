@@ -1,0 +1,29 @@
+.lastdaysofmonth {
+	width: 100%;
+	background: #882B75;
+	min-height: 35px;
+	margin-bottom: 35px;
+	border-radius: 5px;
+	padding: 15px 50px 15px 15px;
+	line-height: 18px;
+	color: #fff;
+	position: relative;
+	sup{
+		font-size: 0.7em;
+	}
+}
+
+.lastdaysofmonth:before {
+	content: "\26A0";
+	font-weight: bold;
+}
+
+.lastdaysofmonth .close {
+	font-size: 30px;
+	line-height: 30px;
+	position: absolute;
+	right: 15px;
+	top: 50%;
+	transform: translateY(-50%);
+	cursor: pointer;
+}

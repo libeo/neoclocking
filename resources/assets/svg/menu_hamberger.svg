@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="32" height="23" viewBox="0 0 32 23">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fff;
+        fill-rule: evenodd;
+      }
+    </style>
+  </defs>
+  <path id="Menu_Hamberger.svg" data-name="Menu Hamberger.svg" class="cls-1" d="M382,498h32v3H382v-3Zm0,10h32v3H382v-3Zm0,10h32v3H382v-3Z" transform="translate(-382 -498)"/>
+</svg>

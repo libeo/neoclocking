@@ -1,0 +1,66 @@
+// ----------------------------------- //
+//             Clock Summary           //
+// ----------------------------------- //
+
+#clock-summary-filter {
+    -webkit-appearance: none;
+    border: 1px solid rgba(255,255,255,0.5);
+    font-family: "Roboto Condensed","Arial",sans-serif;
+    font-weight: 400;
+    text-transform: uppercase;
+    font-size: 14px;
+    color: #fff;
+    margin-bottom: 15px;
+    padding: 8px 62px 8px 8px;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+    background: #143a50 url(../img/clock-summary-filter-arrow.png) no-repeat right 8px center;
+}
+.clock-summary-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+   .clock-summary {
+        margin: 0;
+        padding: 18px 0 16px;
+        border-bottom: 1px solid rgba(255,255,255,0.2);
+        color: #fff;
+        display: block;
+        width:100%;
+        @include clearfix;
+        &.clock-summary-total{
+            border-bottom:0;
+            .clock-summary-name{
+                font-weight:bold !important;
+            }
+        }
+        .clock-summary-left {
+            width: 60%;
+            display: inline-block;
+            float: left;
+            .clock-summary-name {
+                font-family: "Roboto Condensed","Arial",sans-serif;
+                font-weight: 400;
+                text-transform: uppercase;
+                font-size: 14px;
+                .clock-summary-name-spliter {
+                    color: rgba(255,255,255,0.2);
+                    margin: 0px 6px;
+                }
+            }
+        }
+        .clock-summary-right {
+            width: 40%;
+            display: inline-block;
+            float: left;
+            .clock-summary-time {
+                text-align: right;
+                font-family: "Roboto Condensed","Arial",sans-serif;
+                font-weight: 700;
+                /*position: relative;
+                top: 50%;
+                transform: translateY(-50%);*/
+            }
+        }
+   }
+}

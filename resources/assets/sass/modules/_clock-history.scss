@@ -1,0 +1,114 @@
+// ------------------------------------- //
+//             Clock history             //
+// ------------------------------------- //
+
+$colourTranslucentWhite: rgba(255, 255, 255, .3);
+
+.clock-history-header {
+    margin-bottom: 17px;
+    font-size: 0;
+    border-bottom: 1px solid $colourTranslucentWhite;
+    padding-bottom:10px;
+}
+
+.clock-history-header-left,
+.clock-history-header-right {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.clock-history-header-left {
+    width: 65%;
+    text-align:left;
+}
+
+.clock-history-header-right {
+    width: 35%;
+    text-align: right;
+    .time-total {
+        @include rem-typo(22px, 22px);
+    }
+}
+
+.clock-history-title,
+.clock-history-navigation {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.clock-history-title {
+    margin: 0;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: color("white");
+    @include rem-typo(25px, 30px);
+    &.with-calendar{
+        width: calc( 100% - 85px );
+        max-width: 440px;
+        text-align: center;
+    }
+}
+
+/** Pagination style **/
+
+.clock-history-navigation, .dataTables_paginate, .pagination {
+    border: 1px solid $colourTranslucentWhite;
+    border-radius: $border-radius;
+    list-style: none;
+    padding: 0;
+    display: inline-block;
+
+    li {
+        &:first-child {
+            margin-top: 0;
+        }
+        margin: 0;
+        padding: 0;
+        display: inline-block;
+        border-right: 1px solid $colourTranslucentWhite;
+
+        &:last-child {
+            border-right: none;
+        }
+
+        &.active {
+            @include gradient-purple;
+        }
+
+        &.active, &.disabled {
+            padding: 8px;
+            color: white;
+        }
+    }
+
+    button, a {
+        transition: background .3s ease-in-out, color .3s ease-in-out;
+        background: transparent;
+        color: white;
+        padding: 8px;
+        margin: 0;
+        display: inline-block;
+
+        &:hover {
+            background: rgba(255, 255, 255, .3);
+            text-decoration: none;
+        }
+    }
+
+    button {
+        padding: 5px 10px;
+        border: none;
+    }
+}
+
+.clock-history-title.picker__input {
+    cursor: pointer;
+    border: 1px solid transparent;
+    border-radius: $border-radius;
+    padding: 2px 5px 0;
+    transition: border .3s ease-in-out;
+    margin:0 5px;
+    &:hover {
+        border: 1px solid $colourTranslucentWhite;
+    }
+}

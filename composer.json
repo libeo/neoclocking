@@ -1,0 +1,97 @@
+{
+    "name": "libeo/neo-clocking",
+    "description": "The Awesome Neo Clocking",
+    "keywords": ["libeo", "neo", "clocking", "laravel 5.1.20"],
+    "type": "project",
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://gitlab.libeo.com/projets/php-ldap.git"
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "dingo/blueprint",
+                "version": "0.1.4",
+                "source": {
+                    "type": "git",
+                    "url": "https://github.com/bouchardm/blueprint.git",
+                    "reference": "master"
+                },
+                "autoload": {
+                    "classmap": ["src/"]
+                }
+            }
+        }
+    ],
+    "require": {
+        "php": ">=5.5.9"
+        ,"laravel/framework": "5.1.*"
+        ,"libeo/ldap": "1.1.*"
+        ,"predis/predis": "^1.0"
+        ,"doctrine/dbal": "2.5.*"
+        ,"league/fractal": "0.13.0"
+        ,"dingo/api": "1.0.x@dev"
+        ,"spatie/searchindex": "^3.2"
+        ,"elasticsearch/elasticsearch": "^1.3"
+        ,"barryvdh/laravel-debugbar": "^2.0",
+        "caffeinated/presenter": "~2.0",
+        "laravelcollective/html": "5.1.*",
+        "yajra/laravel-datatables-oracle": "^6.4",
+        "guzzlehttp/guzzle": "^6.2"
+    },
+    "require-dev": {
+        "fzaninotto/faker": "~1.4",
+        "mockery/mockery": "0.9.*",
+        "phpunit/phpunit": "~4.0",
+        "phpspec/phpspec": "~2.1",
+        "barryvdh/laravel-ide-helper": "2.1.*",
+        "laracasts/generators": "1.1.*",
+        "squizlabs/php_codesniffer": "2.3.*",
+
+        "behat/behat": "3.*",
+        "behat/mink": "~1.6",
+        "behat/mink-extension": "~2.0",
+        "behat/mink-goutte-driver": "~1.1",
+        "behat/mink-selenium2-driver":  "~1.2",
+        "laracasts/behat-laravel-extension": "^1.0"
+    },
+    "autoload": {
+        "classmap": [
+            "database"
+        ],
+        "psr-4": {
+            "NeoClocking\\": "app/",
+            "Features\\Bootstrap\\": "features/bootstrap"
+        },
+        "files": [
+            "app/helpers.php"
+        ]
+    },
+    "autoload-dev": {
+        "classmap": [
+            "tests/TestCase.php"
+        ]
+    },
+    "scripts": {
+        "post-install-cmd": [
+            "php artisan clear-compiled",
+            "php artisan optimize"
+        ],
+        "pre-update-cmd": [
+            "php artisan clear-compiled"
+        ],
+        "post-update-cmd": [
+            "php artisan optimize"
+        ],
+        "post-root-package-install": [
+            "php -r \"copy('.env.example', '.env');\""
+        ],
+        "post-create-project-cmd": [
+            "php artisan key:generate"
+        ]
+    },
+    "config": {
+        "preferred-install": "dist"
+    }
+}

@@ -1,0 +1,18 @@
+// ------------------------------------- //
+//             Accessibility             //
+// ------------------------------------- //
+
+// Disable default outline
+:focus {
+    // outline-width: 0; // enlevé en attendant d'avoir des effects de focus...
+    // Custom outline color
+    [data-state="keyboard"] & {
+        outline-width: 5px;
+    }
+}
+
+// Custom inline links outline color
+[data-state="keyboard"] p > a:focus {
+    text-decoration: none;
+    background-color: $c-bg-document;
+}

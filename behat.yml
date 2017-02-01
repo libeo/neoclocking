@@ -1,0 +1,22 @@
+default:
+    autoload:
+        '': %paths.base%/features/bootstrap
+    extensions:
+        Laracasts\Behat:
+            # env_path: .env.behat
+        Behat\MinkExtension:
+            default_session: laravel
+            laravel: ~
+            base_url: http://neoclocking.local/
+            selenium2:
+                browser: chrome
+    suites:
+        temps:
+            paths: [features/temps]
+            contexts:
+              - Features\Bootstrap\TempsContext
+
+dev:
+  extensions:
+    Behat\MinkExtension:
+      base_url: https://neoclocking-libeo.dev.vici.io/
